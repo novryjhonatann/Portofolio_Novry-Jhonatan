@@ -152,6 +152,28 @@ body {
     animation: fadeInUp 1s ease;
 }
 
+.hero-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.7);
+    animation: breathe 3s ease-in-out infinite;
+    margin-bottom: 1.5rem;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 30px rgba(99, 102, 241, 0.7);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 50px rgba(99, 102, 241, 0.9);
+    }
+}
+
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
