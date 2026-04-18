@@ -304,11 +304,11 @@ ul {
 .badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     background: rgba(22, 69, 97, 0.15);
-    padding: 12px 24px;
+    padding: 8px 16px;
     border-radius: 30px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
     color: #22c55e;
     position: relative;
@@ -317,8 +317,8 @@ ul {
 
 .badge::before {
     content: '';
-    width: 10px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
     background: #22c55e;
     border-radius: 50%;
     animation: pulse 2s infinite;
@@ -1422,13 +1422,13 @@ ul {
     }
 
     .badge {
-        font-size: 18px;
-        padding: 14px 28px;
+        font-size: 14px;
+        padding: 10px 20px;
     }
 
     .badge::before {
-        width: 12px;
-        height: 12px;
+        width: 8px;
+        height: 8px;
     }
 
     .profile-wrapper {
