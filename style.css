@@ -134,18 +134,14 @@ ul {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 24px;
-    font-weight: 700;
 }
 
-.logo-icon {
-    color: var(--accent-light);
-    font-size: 28px;
-}
-
-.logo-text span {
-    color: var(--accent-light);
+.logo-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
 }
 
 .nav-menu {
