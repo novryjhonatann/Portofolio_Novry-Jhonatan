@@ -1268,8 +1268,8 @@ ul {
     }
 
     .profile-wrapper {
-        width: 340px;
-        height: 340px;
+        width: 280px;
+        height: 280px;
     }
 
     .profile-wrapper .ring-1,
@@ -1279,9 +1279,8 @@ ul {
     }
 
     .profile-img {
-        width: 80%;
-        height: 80%;
-        border-width: 3px;
+        width: 85%;
+        height: 85%;
     }
 
     .floating-card {
@@ -1369,8 +1368,8 @@ ul {
     }
 
     .profile-wrapper {
-        width: 280px;
-        height: 280px;
+        width: 300px;
+        height: 300px;
     }
 
     .profile-wrapper .ring-1,
@@ -1382,7 +1381,6 @@ ul {
     .profile-img {
         width: 75%;
         height: 75%;
-        border-width: 3px;
     }
 
     .profile-wrapper {
