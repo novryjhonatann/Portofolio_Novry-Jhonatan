@@ -161,4 +161,12 @@ document.addEventListener('DOMContentLoaded', function() {
     allCards.forEach(card => {
         cardObserver.observe(card);
     });
+
+    const bgMusic = document.getElementById('bg-music');
+    if (bgMusic) {
+        bgMusic.volume = 0.3;
+        bgMusic.play().catch(function(e) {
+            console.log('Autoplay blocked, user interaction required');
+        });
+    }
 });
