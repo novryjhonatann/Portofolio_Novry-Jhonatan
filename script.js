@@ -1,30 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const cursor = document.querySelector('.cursor');
+    const cursor2 = document.querySelector('.cursor2');
     const navbar = document.querySelector('.navbar');
-    const navToggle = document.querySelector('.nav-toggle');
+    const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    const scrollDown = document.querySelector('.scroll-down');
-    const contactForm = document.querySelector('.contact-form');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        cursor2.style.left = e.clientX + 'px';
+        cursor2.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('mousedown', function() {
+        cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+        cursor2.style.transform = 'translate(-50%, -50%) scale(0.8)';
+    });
+
+    document.addEventListener('mouseup', function() {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor2.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
-            navbar.style.padding = '10px 0';
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.padding = '20px 0';
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.classList.remove('scrolled');
         }
     });
 
-    navToggle.addEventListener('click', function() {
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
     });
 
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
             navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
         });
     });
 
@@ -51,55 +66,50 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('.timeline-item, .skill-card, .education-card, .contact-item').forEach(el => {
+    document.querySelectorAll('.timeline-card, .skill-card, .education-card').forEach(el => {
         observer.observe(el);
     });
 
-    const skillCards = document.querySelectorAll('.skill-card');
-    const skillObserver = new IntersectionObserver(function(entries) {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, index * 100);
-                skillObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
+    const typedTexts = ['QA Professional', 'Quality Assurance Specialist', 'Software Tester'];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typedElement = document.querySelector('.typed-text');
 
-    skillCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.6s ease';
-        skillObserver.observe(card);
-    });
+    function type() {
+        const currentText = typedTexts[textIndex];
+        
+        if (isDeleting) {
+            typedElement.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typedElement.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
 
-    const eduCards = document.querySelectorAll('.education-card');
-    const eduObserver = new IntersectionObserver(function(entries) {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, index * 150);
-                eduObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
+        let typeSpeed = isDeleting ? 50 : 100;
 
-    eduCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'all 0.6s ease';
-        eduObserver.observe(card);
-    });
+        if (!isDeleting && charIndex === currentText.length) {
+            typeSpeed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % typedTexts.length;
+            typeSpeed = 500;
+        }
 
+        setTimeout(type, typeSpeed);
+    }
+
+    if (typedElement) {
+        type();
+    }
+
+    const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -110,26 +120,45 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = this.querySelector('textarea').value;
 
             if (name && email && subject && message) {
-                alert(`Thank you, ${name}! Your message has been sent successfully. I'll get back to you soon.`);
-                this.reset();
+                const btn = this.querySelector('.btn-submit');
+                btn.innerHTML = '<i class="fas fa-check"></i><span>Sent!</span>';
+                btn.style.background = '#22c55e';
+                
+                setTimeout(() => {
+                    alert(`Thank you, ${name}! Your message has been sent successfully.`);
+                    this.reset();
+                    btn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
+                    btn.style.background = '';
+                }, 500);
             }
         });
     }
 
-    const heroImage = document.querySelector('.hero-image');
-    if (heroImage) {
-        heroImage.addEventListener('mouseover', function() {
-            this.style.transform = 'scale(1.02)';
-        });
-        
-        heroImage.addEventListener('mouseout', function() {
-            this.style.transform = 'scale(1)';
-        });
+    const currentYear = new Date().getFullYear();
+    const copyright = document.querySelector('.copyright');
+    if (copyright) {
+        copyright.textContent = `© ${currentYear} All Rights Reserved.`;
     }
 
-    const currentYear = new Date().getFullYear();
-    const footerYear = document.querySelector('.footer-content p:first-child');
-    if (footerYear) {
-        footerYear.textContent = `© ${currentYear} Novry Jhonatan. All Rights Reserved.`;
-    }
+    const allCards = document.querySelectorAll('.skill-card, .education-card, .timeline-card');
+    
+    allCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+    });
+
+    const cardObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                cardObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    allCards.forEach(card => {
+        cardObserver.observe(card);
+    });
 });
