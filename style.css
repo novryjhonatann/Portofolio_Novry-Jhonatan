@@ -870,8 +870,19 @@ ul {
 
 .education-card.main-card .edu-type,
 .education-card.main-card .edu-school,
-.education-card.main-card .edu-year {
+.education-card.main-card .edu-year,
+.education-card.main-card .edu-gpa {
     color: rgba(255,255,255,0.8);
+}
+
+.edu-gpa {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.education-card .edu-gpa {
+    color: var(--text-muted);
 }
 
 .edu-icon {
@@ -909,10 +920,79 @@ ul {
     color: var(--text-muted);
 }
 
+.education-card .edu-gpa {
+    font-size: 13px;
+    margin-top: 4px;
+}
+
 .education-card h3 {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 8px;
+}
+
+.organization {
+    padding: 120px 0;
+    background: var(--bg-secondary);
+}
+
+.org-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.org-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.3s;
+}
+
+.org-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-8px);
+}
+
+.org-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--gradient);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.org-icon i {
+    color: white;
+    font-size: 24px;
+}
+
+.org-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.org-role {
+    font-size: 14px;
+    color: var(--accent-light);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.org-year {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.org-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
 }
 
 .contact {
@@ -1099,8 +1179,12 @@ ul {
     margin-bottom: 12px;
 }
 
-.footer-logo .logo-icon {
-    font-size: 24px;
+.footer-logo-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
 }
 
 .footer-content p {
@@ -1224,6 +1308,10 @@ ul {
     }
 
     .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .org-grid {
         grid-template-columns: 1fr;
     }
 
