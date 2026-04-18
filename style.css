@@ -1278,21 +1278,8 @@ ul {
         display: none;
     }
 
-    .profile-wrapper {
-        width: 180px;
-        height: 180px;
-    }
-
-    .profile-wrapper .ring-1,
-    .profile-wrapper .ring-2,
-    .profile-wrapper .ring-3 {
-        display: none;
-    }
-
     .profile-img {
-        width: calc(100% - 40px);
-        height: calc(100% - 40px);
-        border-width: 3px;
+        border-width: 2px;
     }
 
     .floating-card {
