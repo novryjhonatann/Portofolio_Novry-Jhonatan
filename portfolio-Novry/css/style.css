@@ -490,21 +490,36 @@ ul {
     width: 100%;
     height: 100%;
     border: 5px solid var(--accent);
-    animation: rotate-right 8s linear infinite;
+    animation: wave-1 3s ease-in-out infinite;
 }
 
 .profile-wrapper .ring-2 {
     width: calc(100% - 40px);
     height: calc(100% - 40px);
     border: 4px solid var(--accent-light);
-    animation: rotate-left 6s linear infinite;
+    animation: wave-2 3s ease-in-out infinite 0.5s;
 }
 
 .profile-wrapper .ring-3 {
     width: calc(100% - 80px);
     height: calc(100% - 80px);
     border: 3px dashed var(--accent);
-    animation: rotate-right 10s linear infinite;
+    animation: wave-3 3s ease-in-out infinite 1s;
+}
+
+@keyframes wave-1 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+@keyframes wave-2 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.08); opacity: 0.7; }
+}
+
+@keyframes wave-3 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.6; }
 }
 
 .profile-img {
@@ -515,21 +530,41 @@ ul {
     position: absolute;
     z-index: 2;
     border: 8px solid var(--accent);
+    animation: none;
 }
 
-@keyframes rotate-right {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.profile-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 110%;
+    background: var(--gradient);
+    filter: blur(40px);
+    opacity: 0.5;
+    z-index: 1;
+    animation: glow-pulse 2s ease-in-out infinite;
 }
 
-@keyframes rotate-left {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(-360deg); }
+@keyframes glow-pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.6; }
 }
 
-@keyframes pulse-ring {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(22, 69, 97, 0.4); }
-    50% { box-shadow: 0 0 0 15px rgba(22, 69, 97, 0); }
+@keyframes wave-1 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+@keyframes wave-2 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.08); opacity: 0.7; }
+}
+
+@keyframes wave-3 {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.6; }
 }
 
 .profile-glow {
