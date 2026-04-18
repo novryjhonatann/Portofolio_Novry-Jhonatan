@@ -473,8 +473,8 @@ ul {
 
 .profile-wrapper {
     position: relative;
-    width: 480px;
-    height: 480px;
+    width: 550px;
+    height: 550px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -508,13 +508,13 @@ ul {
 }
 
 .profile-img {
-    width: calc(100% - 80px);
-    height: calc(100% - 80px);
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
     object-fit: cover;
     border-radius: 50%;
     position: absolute;
     z-index: 2;
-    border: 6px solid var(--accent);
+    border: 8px solid var(--accent);
 }
 
 @keyframes rotate-right {
@@ -1316,9 +1316,30 @@ ul {
         order: -1;
     }
 
+.profile-wrapper {
+        width: 450px;
+        height: 450px;
+    }
+
+    .profile-wrapper .ring-1,
+    .profile-wrapper .ring-2,
+    .profile-wrapper .ring-3 {
+        display: none;
+    }
+
     .profile-wrapper {
         width: 380px;
         height: 380px;
+    }
+
+    .profile-wrapper .ring-1,
+    .profile-wrapper .ring-2,
+    .profile-wrapper .ring-3 {
+        display: none;
+    }
+
+    .section-title {
+        font-size: 32px;
     }
 
     .profile-wrapper .ring-1,
