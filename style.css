@@ -589,9 +589,6 @@ ul {
 
 .about-image-wrapper {
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
 }
 
 .about-image {
@@ -603,7 +600,7 @@ ul {
 
 .about-image img {
     width: 100%;
-    height: 280px;
+    height: 380px;
     object-fit: cover;
     display: block;
 }
@@ -1290,15 +1287,12 @@ ul {
     }
 
     .about-image-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
         max-width: 100%;
         margin: 0 auto;
     }
 
     .about-image img {
-        height: 180px;
+        height: 280px;
     }
 
     .skills-grid {
