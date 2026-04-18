@@ -1260,19 +1260,34 @@ ul {
         justify-content: center;
     }
 
-    .hero-visual {
+.hero-visual {
         order: -1;
-    }
-
-    .profile-wrapper {
-        width: 280px;
-        height: 280px;
     }
 
     .profile-wrapper .ring-1,
     .profile-wrapper .ring-2,
     .profile-wrapper .ring-3 {
         display: none;
+    }
+
+    .profile-wrapper {
+        width: 260px;
+        height: 260px;
+    }
+
+    .profile-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+
+    .profile-wrapper .ring-1,
+    .profile-wrapper .ring-2,
+    .profile-wrapper .ring-3 {
+        display: none;
+    }
+
+    .profile-img {
+        border-width: 3px;
     }
 
     .floating-card {
@@ -1357,6 +1372,11 @@ ul {
 
     .hero-buttons {
         flex-direction: column;
+    }
+
+    .profile-wrapper {
+        width: 180px;
+        height: 180px;
     }
 
     .section-title {
