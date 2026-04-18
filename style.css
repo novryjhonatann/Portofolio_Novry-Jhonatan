@@ -425,46 +425,57 @@ ul {
     position: relative;
 }
 
-.profile-container {
+.profile-wrapper {
     position: relative;
-    width: 380px;
-    height: 380px;
+    width: 360px;
+    height: 360px;
     animation: float 3s ease-in-out infinite;
 }
 
-.profile-frame {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 2;
-    overflow: visible;
-    border-radius: 50%;
-    animation: pulse-ring 3s ease-out infinite;
-}
-
-.profile-frame::before {
-    content: '';
+.profile-wrapper .profile-ring {
     position: absolute;
-    top: -8px;
-    left: -8px;
-    right: -8px;
-    bottom: -8px;
     border-radius: 50%;
-    border: 3px solid var(--accent-light);
-    animation: rotate-ring 4s linear infinite;
-    z-index: -1;
+    border: 2px solid var(--accent-light);
 }
 
-.profile-frame img {
+.profile-wrapper .ring-1 {
+    inset: -15px;
+    border-color: var(--accent);
+    animation: rotate-right 12s linear infinite;
+}
+
+.profile-wrapper .ring-2 {
+    inset: -30px;
+    border-color: var(--accent-light);
+    border-top: none;
+    animation: rotate-left 8s linear infinite;
+}
+
+.profile-wrapper .ring-3 {
+    inset: -45px;
+    border-color: var(--accent);
+    border-bottom: none;
+    animation: rotate-right 15s linear infinite;
+}
+
+.profile-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    border: 4px solid var(--accent);
 }
 
-@keyframes rotate-ring {
+@keyframes rotate-right {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate-left {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
 }
 
 @keyframes pulse-ring {
@@ -1253,9 +1264,15 @@ ul {
         order: -1;
     }
 
-    .profile-container {
+    .profile-wrapper {
         width: 280px;
-        height: 360px;
+        height: 280px;
+    }
+
+    .profile-wrapper .ring-1,
+    .profile-wrapper .ring-2,
+    .profile-wrapper .ring-3 {
+        display: none;
     }
 
     .floating-card {
