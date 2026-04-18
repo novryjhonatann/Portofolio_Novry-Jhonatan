@@ -138,12 +138,33 @@ ul {
 
 .logo-text {
     font-family: 'Inter', sans-serif;
-    font-size: 28px;
-    font-weight: 800;
+    font-size: 38px;
+    font-weight: 900;
     background: var(--gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    position: relative;
+    animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+.logo-text::before {
+    content: 'NJ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    filter: blur(15px);
+    opacity: 0.6;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    z-index: -1;
+}
+
+@keyframes logoGlow {
+    0% { filter: brightness(1) drop-shadow(0 0 5px var(--accent-glow)); }
+    100% { filter: brightness(1.2) drop-shadow(0 0 20px var(--accent-glow)); }
 }
 
 .nav-menu {
