@@ -8,13 +8,13 @@
 :root {
     --primary-color: #6366f1;
     --secondary-color: #8b5cf6;
-    --dark-color: #1e1b4b;
-    --light-color: #f8fafc;
-    --text-color: #334155;
+    --dark-color: #0f172a;
+    --light-color: #1e293b;
+    --text-color: #f1f5f9;
     --text-light: #94a3b8;
     --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 15px 40px rgba(99, 102, 241, 0.2);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 15px 40px rgba(99, 102, 241, 0.3);
 }
 
 html {
@@ -27,6 +27,15 @@ body {
     color: var(--text-color);
     background: var(--light-color);
     overflow-x: hidden;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
 }
 
 .container {
