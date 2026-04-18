@@ -141,7 +141,7 @@ ul {
     height: 42px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--accent);
+    border: none;
 }
 
 .nav-menu {
@@ -1186,7 +1186,7 @@ ul {
     height: 36px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--accent);
+    border: none;
 }
 
 .footer-content p {
