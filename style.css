@@ -598,6 +598,14 @@ ul {
     overflow: hidden;
 }
 
+.about-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--bg-primary) 0%, transparent 15%, transparent 85%, var(--bg-primary) 100%);
+    pointer-events: none;
+}
+
 .about-image img {
     width: 100%;
     height: auto;
