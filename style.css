@@ -437,12 +437,14 @@ ul {
     position: relative;
     z-index: 2;
     overflow: hidden;
+    border-radius: 24px;
 }
 
 .profile-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 24px;
 }
 
 .profile-glow {
@@ -569,7 +571,7 @@ ul {
     left: 20px;
     right: -20px;
     bottom: -20px;
-    border: 2px solid var(--accent);
+    border: none;
     border-radius: 24px;
     z-index: 1;
 }
