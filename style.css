@@ -502,8 +502,8 @@ ul {
 }
 
 .profile-img {
-    width: calc(100% - 120px);
-    height: calc(100% - 120px);
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
     object-fit: cover;
     border-radius: 50%;
     position: absolute;
