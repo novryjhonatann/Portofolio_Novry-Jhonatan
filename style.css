@@ -1322,8 +1322,8 @@ ul {
     }
 
     .profile-img {
-        width: 85%;
-        height: 85%;
+        width: 95%;
+        height: 95%;
     }
 
     .floating-card {
@@ -1437,13 +1437,13 @@ ul {
     }
 
     .profile-img {
-        width: 75%;
-        height: 75%;
+        width: 90%;
+        height: 90%;
     }
 
     .profile-wrapper {
-        width: 160px;
-        height: 160px;
+        width: 200px;
+        height: 200px;
     }
 
     .profile-wrapper .ring-1,
