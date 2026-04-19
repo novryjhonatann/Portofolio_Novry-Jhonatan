@@ -140,10 +140,7 @@ ul {
     font-family: 'Inter', sans-serif;
     font-size: 30px;
     font-weight: 800;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     position: relative;
     animation: logoGlow 2s ease-in-out infinite alternate;
 }
@@ -155,10 +152,7 @@ ul {
     top: 0;
     filter: blur(15px);
     opacity: 0.6;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     z-index: -1;
 }
 
