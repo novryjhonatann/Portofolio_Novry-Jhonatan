@@ -306,7 +306,6 @@ ul {
     font-weight: 600;
     color: #22c55e;
     position: relative;
-    animation: morphBorder 3s ease-in-out infinite;
 }
 
 .badge::before {
@@ -315,7 +314,6 @@ ul {
     height: 6px;
     background: #22c55e;
     border-radius: 50%;
-    animation: pulse 2s infinite;
 }
 
 .badge::after {
@@ -325,11 +323,8 @@ ul {
     border-radius: 30px;
     background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent-2), var(--accent));
     z-index: -1;
-    animation: morphBorder 3s linear infinite;
     opacity: 0.7;
 }
-
-@keyframes morphBorder {
     0%, 100% { 
         filter: blur(0px) brightness(1);
         transform: scale(1);
@@ -472,9 +467,6 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 50%, #d4af37 100%);
-    border-radius: 50%;
-    padding: 20px;
 }
 
 .profile-wrapper .profile-ring {
@@ -545,7 +537,6 @@ ul {
     font-size: 14px;
     font-weight: 500;
     z-index: 3;
-    animation: float 3s ease-in-out infinite;
 }
 
 .floating-card i {
@@ -600,12 +591,7 @@ ul {
     top: 8px;
     left: 50%;
     transform: translateX(-50%);
-    animation: scroll 2s infinite;
 }
-
-@keyframes scroll {
-    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    100% { opacity: 0; transform: translateX(-50%) translateY(12px); }
 }
 
 .about {
@@ -1307,7 +1293,7 @@ ul {
     .profile-wrapper {
         width: 280px;
         height: 280px;
-        background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 50%, #d4af37 100%);
+        background: transparent;
         border-radius: 50%;
         padding: 15px;
     }
