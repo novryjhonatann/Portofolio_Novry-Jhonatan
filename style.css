@@ -494,7 +494,6 @@ ul {
     border-radius: 50%;
     position: absolute;
     z-index: 2;
-    border: 4px solid var(--accent);
 }
 
 @keyframes rotate-right {
