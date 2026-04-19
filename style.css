@@ -472,6 +472,9 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    padding: 20px;
 }
 
 .profile-wrapper .profile-ring {
@@ -481,24 +484,15 @@ ul {
 }
 
 .profile-wrapper .ring-1 {
-    width: 100%;
-    height: 100%;
-    border: 5px solid var(--accent);
-    animation: rotate-right 8s linear infinite;
+    display: none;
 }
 
 .profile-wrapper .ring-2 {
-    width: calc(100% - 40px);
-    height: calc(100% - 40px);
-    border: 4px solid var(--accent-light);
-    animation: rotate-left 6s linear infinite;
+    display: none;
 }
 
 .profile-wrapper .ring-3 {
-    width: calc(100% - 80px);
-    height: calc(100% - 80px);
-    border: 3px dashed var(--accent);
-    animation: rotate-right 10s linear infinite;
+    display: none;
 }
 
 .profile-img {
@@ -1313,6 +1307,9 @@ ul {
     .profile-wrapper {
         width: 280px;
         height: 280px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 50%;
+        padding: 15px;
     }
 
     .profile-wrapper .ring-1,
