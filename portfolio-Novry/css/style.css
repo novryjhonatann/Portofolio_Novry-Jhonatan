@@ -140,10 +140,7 @@ ul {
     font-family: 'Inter', sans-serif;
     font-size: 30px;
     font-weight: 800;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     position: relative;
     animation: logoGlow 2s ease-in-out infinite alternate;
 }
@@ -155,10 +152,7 @@ ul {
     top: 0;
     filter: blur(15px);
     opacity: 0.6;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     z-index: -1;
 }
 
@@ -312,7 +306,6 @@ ul {
     font-weight: 600;
     color: #22c55e;
     position: relative;
-    animation: morphBorder 3s ease-in-out infinite;
 }
 
 .badge::before {
@@ -321,7 +314,6 @@ ul {
     height: 6px;
     background: #22c55e;
     border-radius: 50%;
-    animation: pulse 2s infinite;
 }
 
 .badge::after {
@@ -331,19 +323,7 @@ ul {
     border-radius: 30px;
     background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent-2), var(--accent));
     z-index: -1;
-    animation: morphBorder 3s linear infinite;
     opacity: 0.7;
-}
-
-@keyframes morphBorder {
-    0%, 100% { 
-        filter: blur(0px) brightness(1);
-        transform: scale(1);
-    }
-    50% { 
-        filter: blur(2px) brightness(1.2);
-        transform: scale(1.02);
-    }
 }
 
 @keyframes pulse {
@@ -487,24 +467,15 @@ ul {
 }
 
 .profile-wrapper .ring-1 {
-    width: 100%;
-    height: 100%;
-    border: 5px solid var(--accent);
-    animation: wave-1 3s ease-in-out infinite;
+    display: none;
 }
 
 .profile-wrapper .ring-2 {
-    width: calc(100% - 40px);
-    height: calc(100% - 40px);
-    border: 4px solid var(--accent-light);
-    animation: wave-2 3s ease-in-out infinite 0.5s;
+    display: none;
 }
 
 .profile-wrapper .ring-3 {
-    width: calc(100% - 80px);
-    height: calc(100% - 80px);
-    border: 3px dashed var(--accent);
-    animation: wave-3 3s ease-in-out infinite 1s;
+    display: none;
 }
 
 @keyframes wave-1 {
@@ -523,14 +494,12 @@ ul {
 }
 
 .profile-img {
-    width: calc(100% - 60px);
-    height: calc(100% - 60px);
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
     object-fit: cover;
     border-radius: 50%;
     position: absolute;
     z-index: 2;
-    border: 8px solid var(--accent);
-    animation: none;
 }
 
 .profile-glow {
@@ -538,13 +507,10 @@ ul {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 110%;
-    height: 110%;
-    background: var(--gradient);
-    filter: blur(40px);
-    opacity: 0.5;
-    z-index: 1;
-    animation: glow-pulse 2s ease-in-out infinite;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, transparent 70%);
+    z-index: 0;
 }
 
 @keyframes glow-pulse {
@@ -592,7 +558,6 @@ ul {
     font-size: 14px;
     font-weight: 500;
     z-index: 3;
-    animation: float 3s ease-in-out infinite;
 }
 
 .floating-card i {
@@ -1320,19 +1285,8 @@ ul {
     }
 
 .profile-wrapper {
-        width: 500px;
-        height: 500px;
-    }
-
-    .profile-wrapper .ring-1,
-    .profile-wrapper .ring-2,
-    .profile-wrapper .ring-3 {
-        display: none;
-    }
-
-    .profile-wrapper {
-        width: 380px;
-        height: 380px;
+        width: 300px;
+        height: 300px;
     }
 
     .profile-wrapper .ring-1,
@@ -1352,8 +1306,8 @@ ul {
     }
 
     .profile-img {
-        width: 85%;
-        height: 85%;
+        width: 95%;
+        height: 95%;
     }
 
     .floating-card {
@@ -1467,8 +1421,8 @@ ul {
     }
 
     .profile-img {
-        width: 75%;
-        height: 75%;
+        width: 90%;
+        height: 90%;
     }
 
 .profile-wrapper {
@@ -1476,15 +1430,9 @@ ul {
         height: 280px;
     }
 
-    .profile-wrapper .ring-1,
-    .profile-wrapper .ring-2,
-    .profile-wrapper .ring-3 {
-        display: none;
-    }
-
-    .profile-wrapper {
-        width: 280px;
-        height: 280px;
+    .profile-img {
+        width: 100%;
+        height: 100%;
     }
 
     .profile-wrapper .ring-1,

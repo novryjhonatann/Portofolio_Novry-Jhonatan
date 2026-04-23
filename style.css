@@ -140,10 +140,7 @@ ul {
     font-family: 'Inter', sans-serif;
     font-size: 30px;
     font-weight: 800;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     position: relative;
     animation: logoGlow 2s ease-in-out infinite alternate;
 }
@@ -155,10 +152,7 @@ ul {
     top: 0;
     filter: blur(15px);
     opacity: 0.6;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     z-index: -1;
 }
 
@@ -312,7 +306,6 @@ ul {
     font-weight: 600;
     color: #22c55e;
     position: relative;
-    animation: morphBorder 3s ease-in-out infinite;
 }
 
 .badge::before {
@@ -321,7 +314,6 @@ ul {
     height: 6px;
     background: #22c55e;
     border-radius: 50%;
-    animation: pulse 2s infinite;
 }
 
 .badge::after {
@@ -331,11 +323,8 @@ ul {
     border-radius: 30px;
     background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent-2), var(--accent));
     z-index: -1;
-    animation: morphBorder 3s linear infinite;
     opacity: 0.7;
 }
-
-@keyframes morphBorder {
     0%, 100% { 
         filter: blur(0px) brightness(1);
         transform: scale(1);
@@ -487,34 +476,24 @@ ul {
 }
 
 .profile-wrapper .ring-1 {
-    width: 100%;
-    height: 100%;
-    border: 5px solid var(--accent);
-    animation: rotate-right 8s linear infinite;
+    display: none;
 }
 
 .profile-wrapper .ring-2 {
-    width: calc(100% - 40px);
-    height: calc(100% - 40px);
-    border: 4px solid var(--accent-light);
-    animation: rotate-left 6s linear infinite;
+    display: none;
 }
 
 .profile-wrapper .ring-3 {
-    width: calc(100% - 80px);
-    height: calc(100% - 80px);
-    border: 3px dashed var(--accent);
-    animation: rotate-right 10s linear infinite;
+    display: none;
 }
 
 .profile-img {
-    width: calc(100% - 120px);
-    height: calc(100% - 120px);
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
     object-fit: cover;
     border-radius: 50%;
     position: absolute;
     z-index: 2;
-    border: 4px solid var(--accent);
 }
 
 @keyframes rotate-right {
@@ -537,12 +516,10 @@ ul {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 120%;
-    height: 120%;
-    background: var(--gradient);
-    filter: blur(60px);
-    opacity: 0.4;
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, transparent 70%);
+    z-index: 0;
 }
 
 .floating-card {
@@ -557,7 +534,6 @@ ul {
     font-size: 14px;
     font-weight: 500;
     z-index: 3;
-    animation: float 3s ease-in-out infinite;
 }
 
 .floating-card i {
@@ -612,12 +588,7 @@ ul {
     top: 8px;
     left: 50%;
     transform: translateX(-50%);
-    animation: scroll 2s infinite;
 }
-
-@keyframes scroll {
-    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    100% { opacity: 0; transform: translateX(-50%) translateY(12px); }
 }
 
 .about {
@@ -1319,6 +1290,9 @@ ul {
     .profile-wrapper {
         width: 280px;
         height: 280px;
+        background: transparent;
+        border-radius: 50%;
+        padding: 15px;
     }
 
     .profile-wrapper .ring-1,
@@ -1328,8 +1302,8 @@ ul {
     }
 
     .profile-img {
-        width: 85%;
-        height: 85%;
+        width: 95%;
+        height: 95%;
     }
 
     .floating-card {
@@ -1432,30 +1406,13 @@ ul {
     }
 
     .profile-wrapper {
-        width: 300px;
-        height: 300px;
-    }
-
-    .profile-wrapper .ring-1,
-    .profile-wrapper .ring-2,
-    .profile-wrapper .ring-3 {
-        display: none;
+        width: 280px;
+        height: 280px;
     }
 
     .profile-img {
-        width: 75%;
-        height: 75%;
-    }
-
-    .profile-wrapper {
-        width: 160px;
-        height: 160px;
-    }
-
-    .profile-wrapper .ring-1,
-    .profile-wrapper .ring-2,
-    .profile-wrapper .ring-3 {
-        display: none;
+        width: 100%;
+        height: 100%;
     }
 
     .section-title {
